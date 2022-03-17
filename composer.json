@@ -1,0 +1,19 @@
+{
+  "name": "davidmars/ee09-php-utils",
+  "description": "Php utilities lib",
+  "version": "0.0.1",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "davidmars"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "EE09PHP": ["EE09PHP/"]
+    }
+  }
+}

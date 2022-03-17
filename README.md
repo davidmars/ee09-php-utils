@@ -1,2 +1,2 @@
 # ee09-php-utils
-Php utilities lib
+Php utilities library

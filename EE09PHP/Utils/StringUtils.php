@@ -1,6 +1,6 @@
 <?php
 
-namespace EE09\Utils;
+namespace EE09PHP\Utils;
 
 /**
  * Quelques méthodes pratiques pour gérer des chaines de caractères.

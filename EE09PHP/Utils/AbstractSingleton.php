@@ -1,7 +1,7 @@
 <?php
 
 
-namespace EE09\Utils;
+namespace EE09PHP\Utils;
 
 
 /**

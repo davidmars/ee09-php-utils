@@ -128,6 +128,41 @@ class FileUtils extends AbstractSingleton
     }
 
     /**
+     * @param $sourceDirectory
+     * @param $destinationDirectory
+     * @param $childFolder
+     * @return false|void
+     */
+    public function copyDir($sourceDirectory, $destinationDirectory, $childFolder = ''){
+        return $this->recurseCopy($sourceDirectory, $destinationDirectory, $childFolder);
+    }
+    /**
+     * Supprime un répertoire et tout ce qui est dedans
+     * @param $dirPath
+     * @return void
+     */
+    public function removeDir($dirPath) {
+        if (is_dir($dirPath)) {
+            $objects = scandir($dirPath);
+            foreach ($objects as $object) {
+                if ($object != "." && $object !="..") {
+                    if (filetype($dirPath . DIRECTORY_SEPARATOR . $object) == "dir") {
+                        $this->removeDir($dirPath . DIRECTORY_SEPARATOR . $object);
+                    } else {
+                        unlink($dirPath . DIRECTORY_SEPARATOR . $object);
+                    }
+                }
+            }
+            reset($objects);
+            $success = rmdir($dirPath);
+            if(!$success){
+                throw new Exception("rmdir $dirPath failed");
+            }
+        }
+
+
+    }
+    /**
      * Crée le répertoire (récursivement) d'un fichier donné
      * @param string $filePath Chemin vers le fichier
      */
